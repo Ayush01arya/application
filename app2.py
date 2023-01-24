@@ -233,4 +233,4 @@ if(student_id in rt):
 	else:
 		st.error("Loading...")
 else:
-	st.error("INVALID")
+	st.error("Enter you NSS ID")
