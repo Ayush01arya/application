@@ -13,7 +13,9 @@ import streamlit as st
 # Returns the current local date
 st.set_page_config(page_title="GEHU NSS BTL", page_icon='nss-logo.png')
 st.info("This Site is only for GEHU NSS UNIT for Bhimtal Campus only",icon="ℹ️")
-
+st.error('\n\nAll Fields are Mandatory')
+st.warning('Avoid any kind of Spelling Mistakes')
+st.info('Write Everything in uppercase letters')
 st.image("GEHU-logo 2.png", width=200)
 
 hide_menu_style = """
@@ -41,7 +43,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; '>NSS APPLICATION </h1>", unsafe_allow_html=True)
 #import streamlit as st
 
-st.info('This is a purely informational message', icon="ℹ️")
+
 today = date.today()
 rt = ['210111558', '220112205', '22011238', '21912061', '210111965', '210121548', '22042547', '22041240', '22031218',
 	  '22011461', '21011412',
@@ -208,11 +210,17 @@ if(student_id in rt):
 			watermark='student_name.pdf'  # the watermark to be provided
 		)
 	if(student_id and name and course):
+		import time
+
+		lt = st.empty()
+		bar = st.progress(0)
+		for iw in range(100):
+			lt.text(f'Generating  ...  {iw + 1}%')
+			bar.progress(iw + 1)
+			time.sleep(0.1)
 		my_bar = st.progress(0)
 
-		for percent_complete in range(100):
-			time.sleep(0.1)
-			my_bar.progress(percent_complete + 1)
+		
 
 		if(my_bar):
 			with open("water.pdf", "rb") as file:
