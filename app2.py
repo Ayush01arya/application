@@ -41,7 +41,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; '>NSS APPLICATION </h1>", unsafe_allow_html=True)
 #import streamlit as st
 
-#st.info('This is a purely informational message', icon="ℹ️")
+st.info('This is a purely informational message', icon="ℹ️")
 today = date.today()
 rt = ['210111558', '220112205', '22011238', '21912061', '210111965', '210121548', '22042547', '22041240', '22031218',
 	  '22011461', '21011412',
@@ -85,7 +85,7 @@ rt = ['210111558', '220112205', '22011238', '21912061', '210111965', '210121548'
 	  '220122151', '220113238', '21471010', '22382152', '220122167', '220112321', '21012837', '220122380',
 	  '22041786', '22041110', '22041818', '220421291',
 	  '21041420', '22011428', '220122775', '220122079', '220111031', '220112040', '220112035', '210121622',
-	  '220112867', '22032974', '21032087', '220121858']
+	  '220112867', '22032974', '21032087', '220121858','21072014','21472159']
 student_id=st.text_input("Enter your student ID :- ")
 if(student_id in rt):
 	st.success("Valid NSS Member ")
@@ -231,6 +231,6 @@ if(student_id in rt):
 
 
 	else:
-		st.info("Loading...")
+		st.error("Loading...")
 else:
-	st.error("Enter you NSS ID")
+	st.error("Enter valid Student ID")
